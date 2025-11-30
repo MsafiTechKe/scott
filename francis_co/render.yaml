@@ -1,0 +1,14 @@
+# Example render.yaml for deploying frontend and backend as services on Render.
+services:
+  - type: web
+    name: scot-backend
+    env: docker
+    dockerfilePath: backend/Dockerfile
+    envVars:
+      - key: DATABASE_URL
+      - key: JWT_SECRET
+      - key: STRIPE_SECRET_KEY
+  - type: static
+    name: scot-frontend
+    env: docker
+    dockerfilePath: frontend/Dockerfile
